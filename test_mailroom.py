@@ -24,3 +24,9 @@ def test_is_valid_donation_is_false():
 def test_create_email():
     from mailroom import create_email
     assert create_email("John Snow", 500) == "Thank you John Snow for your donation of $500"
+
+
+"""Test get donar's average donation"""
+def test_get_average_donation():
+    from mailroom import get_average_donation
+    assert get_average_donation([20,500,10]) == '176.67'

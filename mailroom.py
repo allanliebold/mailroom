@@ -1,5 +1,6 @@
 """Mailroom Madness."""
 donar_list = {'John Snow': ['100', '20', '50'], 'Robert Stark': ['5', '3', '1']}
+donar_report = {}
 
 def main():
     """Main Function."""
@@ -72,6 +73,10 @@ def create_email(donar_name, donation_amount):
 def create_report():
     """Create Report."""
     return "REPORT CREATED"
+
+def get_average_donation(donations):
+    average = float(sum(donations)) / max(len(donations), 1)
+    return "{0:.2f}".format(average)
 
 
 if __name__ == '__main__': # pragma : no cover
