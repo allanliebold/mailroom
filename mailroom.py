@@ -72,6 +72,11 @@ def create_email(donar_name, donation_amount):
     
 def create_report():
     """Create Report."""
+    
+    for donar, donations in donar_list.items():
+        donations = [int(i) for i in donations]
+        print(donar, donations, sum(donations), get_average_donation(donations))
+
     return "REPORT CREATED"
 
 def get_average_donation(donations):
