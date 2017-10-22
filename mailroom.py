@@ -12,7 +12,11 @@ def main():
         if option_select == 'q':
             running = False
         elif option_select == '1':
-            send_thanks()
+            donar_name = send_thanks()
+            if donar_name != False:
+                #add donation
+                add_donation(donar_name)
+                print(donar_list)
         elif option_select == '2':
             print(create_report())
 
@@ -29,15 +33,30 @@ def send_thanks():
             return False
         elif add_name_option == 'y':
             donar_list[donar_name] = []
-            return True
+            return donar_name
     else:
-        return check_name(donar_name)
+        return donar_name
 
 def check_name(donar_name):
     """Check Name function."""
     if donar_name in donar_list:
         return True
     else:
+        return False
+
+def add_donation(donar_name):
+
+    make_donation = input("Enter Donation Amount: ")
+    if check_donation(make_donation) == True:
+        donar_list[donar_name].append(int(make_donation))
+    else:
+        print("invalid donation")
+
+def check_donation(donation):
+    try:
+        int(donation)
+        return True
+    except ValueError:
         return False
 
 def create_report():
