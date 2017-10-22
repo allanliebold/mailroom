@@ -23,6 +23,9 @@ def send_thanks():
     """Send Thank You."""
     return "THANK YOU"
 
+def check_name(donar_name):
+    return True
+
 
 def create_report():
     """Create Report."""
