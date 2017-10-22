@@ -20,7 +20,6 @@ def main():
                 print(create_email(donar_name, donation_amount))
                 print("SENT")
         elif option_select == '2':
-            print("Option 2 Selected")
             print(create_report())
 
     print("END")
@@ -74,10 +73,16 @@ def create_email(donar_name, donation_amount):
 def create_report():
     """Create Report."""
     print("Creating Report")
+
+    report_body = "Name of Donar     Total Donations     Average Donation\n"
+
     for donar, donations in donar_list.items():
         donations = [int(i) for i in donations]
         donar_report[donar] = [sum(donations), get_average_donation(donations)]
-    return(donar_report)
+
+    for donar, donation_stats in donar_report.items():
+        report_body += "%s          %s             %s\n" %(donar,donation_stats[0],donation_stats[1]) 
+    return(report_body)
 
 
 def get_average_donation(donations):
