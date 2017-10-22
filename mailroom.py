@@ -1,5 +1,5 @@
 """Mailroom Madness."""
-donar_list = {'John Snow': [100, 20, 50], 'Robert Stark': [5, 3, 1]}
+donar_list = {'John Snow': ['100', '20', '50'], 'Robert Stark': ['5', '3', '1']}
 
 def main():
     """Main Function."""
@@ -14,9 +14,8 @@ def main():
         elif option_select == '1':
             donar_name = send_thanks()
             if donar_name != False:
-                #add donation
-                add_donation(donar_name)
-                print(donar_list)
+                donation_amount = add_donation(donar_name)
+                create_email(donar_name, donation_amount)
         elif option_select == '2':
             print(create_report())
 
@@ -37,6 +36,7 @@ def send_thanks():
     else:
         return donar_name
 
+
 def check_name(donar_name):
     """Check Name function."""
     if donar_name in donar_list:
@@ -44,13 +44,16 @@ def check_name(donar_name):
     else:
         return False
 
+
 def add_donation(donar_name):
 
     make_donation = input("Enter Donation Amount: ")
     if check_donation(make_donation) == True:
         donar_list[donar_name].append(int(make_donation))
+        return make_donation
     else:
         print("invalid donation")
+
 
 def check_donation(donation):
     try:
@@ -58,6 +61,12 @@ def check_donation(donation):
         return True
     except ValueError:
         return False
+
+
+def create_email(donar_name, donation_amount):
+    print("E-mail message: ")
+    print("Thank you %s for your donation of $%s" %(donar_name, donation_amount))
+    print("SENT")
 
 def create_report():
     """Create Report."""
