@@ -15,7 +15,9 @@ def main():
             donar_name = send_thanks()
             if donar_name != False:
                 donation_amount = add_donation(donar_name)
-                create_email(donar_name, donation_amount)
+                print("E-mail Message: ")
+                print(create_email(donar_name, donation_amount))
+                print("SENT")
         elif option_select == '2':
             print(create_report())
 
@@ -64,10 +66,9 @@ def check_donation(donation):
 
 
 def create_email(donar_name, donation_amount):
-    print("E-mail message: ")
-    print("Thank you %s for your donation of $%s" %(donar_name, donation_amount))
-    print("SENT")
+    return "Thank you %s for your donation of $%s" %(donar_name, donation_amount)
 
+    
 def create_report():
     """Create Report."""
     return "REPORT CREATED"

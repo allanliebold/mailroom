@@ -19,3 +19,8 @@ def test_is_valid_donation_is_false():
     from mailroom import check_donation
     assert check_donation("xxx") == False
 
+
+"""Test if create e-mail function returns correct string."""
+def test_create_email():
+    from mailroom import create_email
+    assert create_email("John Snow", 500) == "Thank you John Snow for your donation of $500"
