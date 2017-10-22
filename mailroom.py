@@ -1,5 +1,5 @@
 """Mailroom Madness."""
-donar_list = {'John Smith': [100, 20, 50], 'Robert Stark': [5, 3, 1]}
+donar_list = {'John Snow': [100, 20, 50], 'Robert Stark': [5, 3, 1]}
 
 def main():
     """Main Function."""
