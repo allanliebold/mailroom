@@ -1,5 +1,5 @@
 """Mailroom Madness."""
-donar_list = {}
+donar_list = {'John Smith': [100, 20, 50], 'Robert Stark': [5, 3, 1]}
 
 def main():
     """Main Function."""
@@ -24,7 +24,10 @@ def send_thanks():
     return "THANK YOU"
 
 def check_name(donar_name):
-    return True
+    """Check Name function."""
+    if donar_name in donar_list:
+        return True
+    return False
 
 
 def create_report():
