@@ -5,7 +5,7 @@ setup(
     description="A Python implementaiton of MailRoom Madness",
     version=0.1,
     author="David Franklin, Allan Liebold",
-    licence="MIT",
+    license="MIT",
     py_modules=['mailroom'],
     package_dir={'': 'src'}
 )
