@@ -1,5 +1,6 @@
 """Mailroom Madness."""
-donar_list = {'John Snow': ['100', '20', '50'], 'Robert Stark': ['5', '3', '1']}
+donar_list = {'John Snow': ['100', '20', '50'], 'Robert Stark': ['50', '30', '10'],
+              'Tyrion Lannister': ['500', '600']}
 donar_report = {}
 
 def main():
@@ -80,8 +81,16 @@ def create_report():
         donations = [int(i) for i in donations]
         donar_report[donar] = [sum(donations), get_average_donation(donations)]
 
-    for donar, donation_stats in donar_report.items():
-        report_body += "%s          %s             %s\n" %(donar,donation_stats[0],donation_stats[1]) 
+    temp = list()
+    for k, v in donar_report.items():
+        temp.append(v[0],)
+    temp.sort()
+    temp.reverse()
+
+    for i in temp:
+        for donar in donar_report:
+            if donar_report[donar][0] == i:
+                report_body += "%s          %s             %s\n" %(donar,donar_report[donar][0],donar_report[donar][1]) 
     return(report_body)
 
 
