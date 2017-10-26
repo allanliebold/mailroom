@@ -1,3 +1,4 @@
+"""Setup file for mailroom assignment."""
 from setuptools import setup
 
 setup(
@@ -7,5 +8,11 @@ setup(
     author="David Franklin, Allan Liebold",
     license="MIT",
     py_modules=['mailroom'],
-    package_dir={'': 'src'}
+    package_dir={'': 'src'},
+    install_requires=[],
+    extras_require={
+        'testing': ['pytest', 'pytest-cov', 'tox'],
+        'development': ['ipython']
+    },
+    entry_points={}
 )
