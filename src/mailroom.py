@@ -49,8 +49,11 @@ def send_thanks():
     """
     donor_name = input("Please enter a full name: ")
 
-    if check_name(donor_name) is False:
-        add_name_option = input("Name %s is not in list, do you want to add to donor list? y) n) " % donor_name)
+    if donor_name.lower() == 'q':
+        return False
+    elif not check_name(donor_name):
+        add_name_option = input("Name %s is not in list, do you want to add "
+                                "to the donor list? y) n) " % donor_name)
         if add_name_option == 'n' or add_name_option == 'q':
             return False
         elif add_name_option == 'y':
@@ -61,14 +64,8 @@ def send_thanks():
 
 
 def check_name(donor_name):
-    """Check Name function.
-
-    A helper function called by send_thanks to verify if a name
-    is in the donor_list dictionary or not.
-    """
-    if donor_name not in donor_list or donor_name == 'q':
-        return False
-    return True
+    """Check if name entered is in the donor_list dictionary."""
+    return donor_name in donor_list
 
 
 def add_donation(donor_name):
@@ -78,6 +75,9 @@ def add_donation(donor_name):
     the user is prompted to enter the dollar amount donated.
     """
     make_donation = input("Enter Donation Amount: ")
+    if make_donation.lower() == 'q':
+        return False
+
     if check_donation(make_donation) is True:
         donor_list[donor_name].append(int(make_donation))
         return make_donation
