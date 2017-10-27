@@ -35,7 +35,8 @@ def test_is_valid_donation_is_false():
 def test_create_email():
     """Test if create e-mail function returns correct string."""
     from mailroom import create_email
-    assert create_email("John Snow", 500) == "Thank you John Snow for your donation of $500"
+    email = "Thank you John Snow for your donation of $500"
+    assert create_email("John Snow", 500) == email
 
 
 def test_get_average_donation():
