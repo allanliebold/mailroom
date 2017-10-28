@@ -2,19 +2,19 @@
 
 CodeFellows Assignment: Mailroom Madness.
 
-This is a tool which tracks a list of donars based on the their contributions.
-    -The user may send a thank you message to a current donar.
-    -The user may enter a new donar.
-    -The user may create a report of existing donars based on size and average contribution.
+This is a tool which tracks a list of donors based on the their contributions.
+    -The user may send a thank you message to a current donor.
+    -The user may enter a new donor.
+    -The user may create a report of existing donors based on size and average contribution.
 
 The user may select one of three intitial options: Send a Thank You, Get Report or Quit the Prompt
-    -Selecting Thank you prompts for the entry of a donar name
-        -the user may enter the new donar if not already present in list of donars
-    -The prompt compiles donar information and responds with a 'Thank You' template for the selected donar
-    -Selecting Create Report will iterate through a python dictionary and generate a report sorting the donars
+    -Selecting Thank you prompts for the entry of a donor name
+        -the user may enter the new donor if not already present in list of donors
+    -The prompt compiles donor information and responds with a 'Thank You' template for the selected donor
+    -Selecting Create Report will iterate through a python dictionary and generate a report sorting the donors
     by size of their contributions and the average contribution.
 
 It is implemented using command line prompt.
 
-Authors: David Franklin, Allen Liebold
+Authors: David Franklin, Allan Liebold
 
