@@ -120,9 +120,10 @@ def create_report():
     """
     print("Creating Report")
     donor_report = {}
-    report_body = "Name of Donor     Total Donations     Average Donation\n"
+    report_body = "Name of Donor     Number of Donations     Average Donation\n"
 
     for donor, donations in donor_list.items():
+
         donations = [int(i) for i in donations]
         donor_report[donor] = [sum(donations), get_average_donation(donations)]
 
@@ -135,7 +136,7 @@ def create_report():
     for i in temp:
         for donor in donor_report:
             if donor_report[donor][0] == i:
-                report_body += "%s              %s                 %s\n" % (donor, donor_report[donor][0], donor_report[donor][1])
+                report_body += "%s              %s                 %s\n" % (donor, len(donor_report[donor]), donor_report[donor][1])
     return(report_body)
 
 
